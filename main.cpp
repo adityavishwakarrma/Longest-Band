@@ -11,16 +11,16 @@ int largestBand(vector<int> arr){
   
   for(int i=0; i<n; i++){
     int curr = arr[i];
-    
+        
     if(s.find(curr-1) == s.end()){
       int cnt = 1;  //cnt for curr
       while(s.find(curr+1) != s.end()){
         cnt++;      //cnt for curr+1
-        i++;
+        curr++;
       }
       largest = max(largest, cnt);
     }
-
+    
   }
   
   return largest;
@@ -29,7 +29,7 @@ int largestBand(vector<int> arr){
 int main() {
   cout << "Hello World!\n";
   
-	vector<int> arr{3,2,1};
+	vector<int> arr{1,9,3,0,18,5,2,4,10,7,12,6};
 	cout << largestBand(arr)<<endl;
 
 	return 0;
